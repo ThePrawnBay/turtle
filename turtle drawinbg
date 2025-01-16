@@ -6,12 +6,28 @@ donatello = turtle.Turtle() #donatello is mo's favorite TMNT
 def square(x, y):
     donatello.pensize(5)
     donatello.pencolor("ghost white")
+    donatello.fillcolor("ghost white")
     donatello.penup()
     donatello.goto(x, y)
     donatello.pendown()
+    donatello.begin_fill()
     for i in range(4): 
-        donatello.forward(100) 
+        donatello.forward(101) 
         donatello.left(-90)
+    donatello.end_fill()
+    
+def square2(ssx, ssy):
+    donatello.pensize(5)
+    donatello.pencolor("black")
+    donatello.fillcolor("black")
+    donatello.penup()
+    donatello.goto(ssx, ssy)
+    donatello.pendown()
+    donatello.begin_fill()
+    for i in range(4): 
+        donatello.forward(30) 
+        donatello.left(-90)
+    donatello.end_fill()
         
 def triangle(tx, ty):
     donatello.pensize(5)
@@ -52,21 +68,46 @@ def star(sx, sy):
 
 def circle(cx, cy, radius):
     donatello.pensize(8)
-    donatello.pencolor("light gray")
-    donatello.fillcolor("dark gray")
+    donatello.pencolor("red")
+    donatello.fillcolor("red")
     donatello.penup()
     donatello.goto(cx, cy)
     donatello.pendown()
     donatello.begin_fill()
     donatello.circle(radius)
     donatello.end_fill()
+
+def circle2(cx2, cy2, radius):
+    donatello.pensize(8)
+    donatello.pencolor("blue")
+    donatello.fillcolor("blue")
+    donatello.penup()
+    donatello.goto(cx2, cy2)
+    donatello.pendown()
+    donatello.begin_fill()
+    donatello.circle(radius)
+    donatello.end_fill()
+
+def line(lx, ly):
+    donatello.pensize(5)
+    donatello.pencolor("gray")
+    donatello.fillcolor("gray")
+    donatello.penup()
+    donatello.goto(lx, ly)
+    donatello.pendown()
+    donatello.begin_fill()
+    for i in range(2): 
+        donatello.forward(80) 
+        donatello.right(-180)
+    donatello.end_fill()
     
 #call functions
 triangle(-100, -155)
-square (-100, -150)
+square (-100, -155)
+square2(-70, -235)
 circle(110, -160, 10)
-circle(-110, -190, 10)
-star(-200, 10)
-hexagon(100, 100)
+circle2(120, -160, 10)
+line(-150, -160)
+
 
 turtle.done() 
